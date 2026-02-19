@@ -147,18 +147,6 @@ RATE_LIMIT_MAX_REQUESTS=100
 VITE_API_URL="http://localhost:3000/api"
 ```
 
-## Features
-
-- 🤖 Multi-model AI chat (GPT-4, GPT-4o, GPT-4o-mini, GPT-4.1)
-- 👁️ Image upload and vision analysis
-- 🎨 Multiple chat modes (Creative, Concise, ELI5, etc.)
-- 📎 File upload support (PDFs, code, documents)
-- 🌙 Beautiful dark theme UI
-- 💾 Conversation management
-- 🔐 Secure authentication
-- 📊 Usage analytics
-- 🚀 Real-time streaming
-
 ## Troubleshooting
 
 ### Database Connection Issues
