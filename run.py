@@ -97,24 +97,29 @@ def check_prerequisites():
 
 def start_postgres():
     print("\n── Starting PostgreSQL (Docker Compose) ───────────────")
-    run("docker compose up -d postgres", cwd=ROOT_DIR)
-    log("PostgreSQL container started", "ok")
+    try:
+        run("docker compose up -d postgres", cwd=ROOT_DIR)
+        log("PostgreSQL container started", "ok")
 
-    # Wait for Postgres to be ready
-    log("Waiting for PostgreSQL to accept connections...", "info")
-    for attempt in range(1, 16):
-        result = run(
-            'docker compose exec -T postgres pg_isready -U postgres',
-            cwd=ROOT_DIR,
-            check=False,
-            capture=True,
-        )
-        if result.returncode == 0:
-            log("PostgreSQL is ready!", "ok")
-            return
-        time.sleep(1)
+        # Wait for Postgres to be ready
+        log("Waiting for PostgreSQL to accept connections...", "info")
+        for attempt in range(1, 16):
+            result = run(
+                'docker compose exec -T postgres pg_isready -U postgres',
+                cwd=ROOT_DIR,
+                check=False,
+                capture=True,
+            )
+            if result.returncode == 0:
+                log("PostgreSQL is ready!", "ok")
+                return
+            time.sleep(1)
 
-    log("PostgreSQL did not become ready in time. Check Docker logs.", "warn")
+        log("PostgreSQL did not become ready in time. Check Docker logs.", "warn")
+    except subprocess.CalledProcessError as e:
+        log(f"Failed to start PostgreSQL: {e}", "warn")
+        log("Continuing without PostgreSQL. You'll need to set up a database manually.", "warn")
+        log("Make sure to update DATABASE_URL in apps/api/.env", "warn")
 
 
 def setup_env_files():
@@ -169,11 +174,15 @@ def install_dependencies():
 
 def setup_database():
     print("\n── Setting up database (Prisma) ────────────────────────")
-    run("npm run prisma:generate", cwd=ROOT_DIR)
-    log("Prisma client generated", "ok")
+    try:
+        run("npm run prisma:generate", cwd=ROOT_DIR)
+        log("Prisma client generated", "ok")
 
-    run("npm run prisma:push", cwd=ROOT_DIR)
-    log("Database schema pushed", "ok")
+        run("npm run prisma:push", cwd=ROOT_DIR)
+        log("Database schema pushed", "ok")
+    except subprocess.CalledProcessError as e:
+        log(f"Database setup failed: {e}", "warn")
+        log("You may need to set up your database manually", "warn")
 
 
 def start_dev_servers():
