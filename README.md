@@ -1,8 +1,11 @@
 <h1 align="center">AI ChatBot</h1>
 <p align="center">
-<img src="https://img.shields.io/github/downloads/yourusername/ai-chatbot/total?style=for-the-badge&label=Downloads&color=3b82f6&labelColor=white">
-<img src="https://img.shields.io/badge/Technology-React-blue?style=for-the-badge&labelColor=white&color=3b82f6">
-<img src="https://img.shields.io/badge/Framework-Node.js-blue?style=for-the-badge&labelColor=white&color=3b82f6">
+  <img src="https://img.shields.io/badge/React-19-1E293B?style=for-the-badge&logo=react&logoColor=white&labelColor=3B82F6" />
+  <img src="https://img.shields.io/badge/TypeScript-5.7-1E293B?style=for-the-badge&logo=typescript&logoColor=white&labelColor=3B82F6" />
+  <img src="https://img.shields.io/badge/Node.js-18+-1E293B?style=for-the-badge&logo=node.js&logoColor=white&labelColor=3B82F6" />
+  <img src="https://img.shields.io/badge/Express-4.21-1E293B?style=for-the-badge&logo=express&logoColor=white&labelColor=3B82F6" />
+  <img src="https://img.shields.io/badge/PostgreSQL-14+-1E293B?style=for-the-badge&logo=postgresql&logoColor=white&labelColor=3B82F6" />
+  <img src="https://img.shields.io/badge/OpenAI_API-✓-1E293B?style=for-the-badge&logo=openai&logoColor=white&labelColor=3B82F6" />
 </p>
 
 ---
@@ -25,9 +28,6 @@
 
    This will install dependencies, set up PostgreSQL, configure environment files, and start the application.
 
-## Showcase
-![image](https://github.com/yourusername/ai-chatbot/assets/123938029/showcase.png)
-
 ## Features
 - Multi-model AI support (GPT-4, GPT-4o, GPT-4o-mini)
 - Image upload and vision analysis
@@ -43,6 +43,3 @@
 - OpenAI API integration
 - Prisma ORM
 - Framer Motion animations
-
-## License
-- Created by AI ChatBot team - MIT License
