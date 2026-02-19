@@ -9,7 +9,7 @@
 </p>
 
 ---
-### Modern AI chatbot application with vision capabilities, multiple chat modes, and a sleek dark theme interface.
+### Modern AI chatbot application with vision capabilities and multiple chat modes.
 ---
 
 ## Installation Steps
