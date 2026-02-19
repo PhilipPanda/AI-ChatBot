@@ -183,7 +183,3 @@ If you encounter issues:
 2. Review logs for error messages
 3. Ensure all prerequisites are installed
 4. Verify environment variables are correctly set
-
----
-
-Made with ❤️ for the AI community
