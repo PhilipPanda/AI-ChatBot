@@ -1,150 +1,172 @@
-<h1 align="center">AI ChatBot</h1>
 <p align="center">
-<img src="https://img.shields.io/github/downloads/yourusername/ai-chatbot/total?style=for-the-badge&label=Downloads&color=3b82f6&labelColor=1e293b">
-<img src="https://img.shields.io/badge/TypeScript-3178c6?style=for-the-badge&labelColor=1e293b&logo=typescript">
-<img src="https://img.shields.io/badge/React-61dafb?style=for-the-badge&labelColor=1e293b&logo=react">
-<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&labelColor=1e293b&logo=node.js">
-<img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&labelColor=1e293b&logo=postgresql">
+  <img src="github/images/banner.png" alt="AI ChatBot" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-19-1E293B?style=for-the-badge&logo=react&logoColor=white&labelColor=3B82F6" />
+  <img src="https://img.shields.io/badge/TypeScript-5.7-1E293B?style=for-the-badge&logo=typescript&logoColor=white&labelColor=3B82F6" />
+  <img src="https://img.shields.io/badge/Node.js-18+-1E293B?style=for-the-badge&logo=node.js&logoColor=white&labelColor=3B82F6" />
+  <img src="https://img.shields.io/badge/Express-4.21-1E293B?style=for-the-badge&logo=express&logoColor=white&labelColor=3B82F6" />
+  <img src="https://img.shields.io/badge/PostgreSQL-14+-1E293B?style=for-the-badge&logo=postgresql&logoColor=white&labelColor=3B82F6" />
+  <img src="https://img.shields.io/badge/OpenAI_API-✓-1E293B?style=for-the-badge&logo=openai&logoColor=white&labelColor=3B82F6" />
 </p>
 
 ---
-### A modern, full-stack AI chatbot application with vision capabilities, multiple chat modes, and a sleek dark theme interface.
+
+<p align="center">
+  <strong>A modern, full-stack AI chatbot application with vision capabilities, multiple chat modes, and a sleek dark theme interface.</strong>
+</p>
+
 ---
 
 ## ✨ Features
 
-- 🤖 **Multi-Model Support** - Works with GPT-4, GPT-4o, GPT-4o-mini, and GPT-4.1 models
-- 👁️ **Vision Capabilities** - Upload and analyze images with AI vision models
-- 🎨 **Multiple Chat Modes**:
-  - Brutally Honest
-  - Creative
-  - Concise
-  - Explain Like I'm 5 (ELI5)
-  - Security Audit
-- 📎 **File Upload Support** - Attach images, PDFs, code files, and documents
-- 🌙 **Beautiful Dark Theme** - Modern, responsive UI with smooth animations
-- 💾 **Conversation Management** - Save, organize, and export your chat history
-- 🔐 **Secure Authentication** - JWT-based auth with encrypted API key storage
-- 📊 **Usage Analytics** - Track your token usage and costs
-- 🚀 **Real-time Streaming** - Instant response streaming with typing indicators
+- **Multi-Model Support** — Works with GPT-4, GPT-4o, GPT-4o-mini, and GPT-4.1 models with streaming responses
+- **Vision Capabilities** — Upload and analyze images with AI vision models (base64 encoded)
+- **Multiple Chat Modes** — Brutally Honest, Creative, Concise, Explain Like I'm 5 (ELI5), and Security Audit modes
+- **File Upload Support** — Attach images, PDFs, code files, and documents with inline preview
+- **Beautiful Dark Theme** — Modern, responsive UI with smooth animations and blue accent colors
+- **Conversation Management** — Save, organize, search, and export your chat history
+- **Secure Authentication** — JWT-based auth with encrypted API key storage and refresh tokens
+- **Usage Analytics** — Track your token usage and costs with detailed analytics dashboard
+- **Real-time Streaming** — Instant response streaming with typing indicators and syntax highlighting
+- **Responsive Design** — Works seamlessly on desktop, tablet, and mobile devices
 
-## 🏗️ Architecture
+## 📸 Showcase
 
-- **Frontend**: React 19 + TypeScript + Vite + TailwindCSS + Framer Motion
-- **Backend**: Node.js + Express + TypeScript + Prisma ORM
-- **Database**: PostgreSQL
-- **AI**: OpenAI API with vision support
-- **Deployment**: Docker Compose ready
+<p align="center">
+  <img src="github/images/showcase.png" alt="AI ChatBot Screenshot" width="900" />
+</p>
 
-## 🚀 Quick Start
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
-- PostgreSQL 14+
-- Docker & Docker Compose (optional but recommended)
-- OpenAI API key
+- **Node.js** 18+ ([download](https://nodejs.org/))
+- **PostgreSQL** 14+ or **Docker** & Docker Compose
+- **OpenAI API key** with access to GPT models
 
 ### Option 1: Automated Setup (Recommended)
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/ai-chatbot.git
-   cd ai-chatbot
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/ai-chatbot.git
+cd ai-chatbot
 
-2. **Run the setup script**:
-   ```bash
-   python run.py
-   ```
-   
-   This script will:
-   - Check prerequisites (Node.js, Docker)
-   - Start PostgreSQL via Docker Compose
-   - Generate secure environment files
-   - Install dependencies
-   - Set up the database
-   - Start both API and web servers
+# Run the automated setup script
+python run.py
+```
+
+This script will automatically:
+- Check prerequisites (Node.js, Docker)
+- Start PostgreSQL via Docker Compose
+- Generate secure environment files with random secrets
+- Install all npm dependencies
+- Set up the database schema
+- Start both API and web development servers
 
 ### Option 2: Manual Setup
 
-1. **Start PostgreSQL**:
-   ```bash
-   docker-compose up -d postgres
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/ai-chatbot.git
+cd ai-chatbot
 
-2. **Set up environment files**:
-   ```bash
-   cp apps/api/.env.example apps/api/.env
-   cp apps/web/.env.example apps/web/.env
-   ```
-   
-   Configure your `apps/api/.env` with your OpenAI API key and JWT secrets.
+# Start PostgreSQL using Docker
+docker-compose up -d postgres
 
-3. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+# Set up environment files
+cp apps/api/.env.example apps/api/.env
+cp apps/web/.env.example apps/web/.env
 
-4. **Set up the database**:
-   ```bash
-   npm run prisma:generate
-   npm run prisma:push
-   ```
+# Install dependencies
+npm install
 
-5. **Start the development servers**:
-   ```bash
-   npm run dev
-   ```
+# Set up the database
+npm run prisma:generate
+npm run prisma:push
+
+# Start development servers
+npm run dev
+```
 
 The application will be available at:
-- Frontend: http://localhost:5173
-- API: http://localhost:3000
+- **Frontend**: http://localhost:5173
+- **API**: http://localhost:3000
 
-## 📁 Project Structure
+## 🏗️ Architecture
 
 ```
 ai-chatbot/
 ├── apps/
 │   ├── api/                 # Express.js backend
 │   │   ├── src/
-│   │   │   ├── routes/      # API routes
-│   │   │   ├── middleware/  # Auth, rate limiting
-│   │   │   ├── lib/         # Utilities (OpenAI, Prisma)
-│   │   │   └── services/    # Business logic
-│   │   ├── prisma/          # Database schema
-│   │   └── package.json
+│   │   │   ├── routes/      # API routes (auth, chat, conversations)
+│   │   │   ├── middleware/  # Auth, rate limiting, error handling
+│   │   │   ├── lib/         # Utilities (OpenAI, Prisma, crypto)
+│   │   │   ├── services/    # Business logic (usage, tokens)
+│   │   │   ├── config/      # Environment configuration
+│   │   │   └── utils/       # Helper functions (JWT, NDJSON)
+│   │   ├── prisma/          # Database schema and migrations
+│   │   ├── package.json
+│   │   └── .env.example
 │   └── web/                 # React frontend
 │       ├── src/
-│       │   ├── components/  # React components
-│       │   ├── pages/       # Page components
-│       │   ├── lib/         # Utilities, API client
-│       │   └── styles/      # Global CSS
-│       └── package.json
+│       │   ├── components/  # React components (ChatComposer, MessageBubble, etc.)
+│       │   ├── pages/       # Page components (ChatPage, SettingsPage, etc.)
+│       │   ├── lib/         # Utilities, API client, types
+│       │   ├── hooks/       # Custom React hooks (useAuth)
+│       │   └── styles/      # Global CSS and design tokens
+│       ├── public/          # Static assets
+│       ├── package.json
+│       ├── vite.config.ts
+│       └── .env.example
 ├── docker-compose.yml       # PostgreSQL setup
 ├── package.json            # Root package.json (workspaces)
-└── run.py                  # Automated setup script
+├── tsconfig.base.json      # TypeScript configuration
+├── run.py                  # Automated setup script
+└── README.md               # This file
 ```
 
-## 🎨 UI Showcase
+## ⚙️ Tech Stack
 
-### Chat Interface
-- Clean, modern dark theme with blue accents
-- Smooth animations and transitions
-- Responsive design for all screen sizes
-- Real-time typing indicators
-- Message streaming with syntax highlighting
+| Layer | Technology |
+|-------|-----------|
+| **Frontend** | React 19 + TypeScript 5.7 + Vite 6 |
+| **Backend** | Node.js 18 + Express 4.21 + TypeScript |
+| **Database** | PostgreSQL 14 + Prisma ORM |
+| **Authentication** | JWT with refresh tokens + bcrypt |
+| **AI Integration** | OpenAI API (GPT-4, GPT-4o, Vision) |
+| **UI/UX** | TailwindCSS + Framer Motion + Lucide React |
+| **Markdown** | React Markdown + Highlight.js + rehype/remark |
+| **State Management** | React Query + Local State |
+| **Rate Limiting** | Express Rate Limit |
+| **Security** | Helmet + CORS + Content Security Policy |
 
-### Chat Modes
-- One-click mode switching with visual indicators
-- Each mode applies a specific personality to responses
-- Mode chips with intuitive icons (Flame, Sparkles, Zap, Lightbulb, Shield)
+## 🎨 Chat Modes
 
-### File Upload
-- Drag & drop or click to upload
-- Support for images, PDFs, code files, and documents
-- Visual attachment previews
-- Base64 encoding for secure transmission
+AI ChatBot includes multiple personality modes to customize responses:
+
+| Mode | Description | Icon |
+|------|-------------|------|
+| **Brutally Honest** | Direct, unfiltered responses | 🔥 |
+| **Creative** | Imaginative and artistic responses | ✨ |
+| **Concise** | Short, to-the-point answers | ⚡ |
+| **ELI5** | Explain Like I'm 5 - simple explanations | 💡 |
+| **Security Audit** | Security-focused analysis | 🛡️ |
+
+Switch between modes instantly using the mode chips in the chat composer.
+
+## 📎 File Upload Support
+
+Upload and interact with various file types:
+
+- **Images** (PNG, JPG, GIF, WebP, SVG) - Vision analysis with AI
+- **Documents** (PDF) - Content extraction and analysis
+- **Code Files** (JS, TS, Python, HTML, CSS, JSON, CSV, MD) - Syntax highlighting and analysis
+- **Text Files** - Direct content processing
+
+Files are converted to base64 and sent securely to the API for processing.
 
 ## 🔧 Configuration
 
@@ -152,10 +174,22 @@ ai-chatbot/
 
 **API (.env)**:
 ```env
+# Database
 DATABASE_URL="postgresql://postgres:password@localhost:5432/ai-chatbot"
-JWT_SECRET="your-jwt-secret"
-JWT_REFRESH_SECRET="your-jwt-refresh-secret"
+
+# Authentication
+JWT_SECRET="your-jwt-secret-here"
+JWT_REFRESH_SECRET="your-jwt-refresh-secret-here"
+
+# OpenAI
+OPENAI_API_KEY="your-openai-api-key-here"
+
+# CORS
 CORS_ORIGIN="http://localhost:5173"
+
+# Rate Limiting (optional)
+RATE_LIMIT_WINDOW_MS=900000
+RATE_LIMIT_MAX_REQUESTS=100
 ```
 
 **Web (.env)**:
@@ -163,7 +197,7 @@ CORS_ORIGIN="http://localhost:5173"
 VITE_API_URL="http://localhost:3000/api"
 ```
 
-### Supported Models
+### Supported AI Models
 
 - `gpt-4o` - Best for vision and general use
 - `gpt-4o-mini` - Faster, cost-effective option
@@ -178,49 +212,88 @@ VITE_API_URL="http://localhost:3000/api"
 - `POST /api/auth/refresh` - Refresh JWT token
 
 ### Chat
-- `POST /api/chat/conversations/:id/stream` - Stream chat response
+- `POST /api/chat/conversations/:id/stream` - Stream chat response with attachments
 - `POST /api/chat/conversations/:id/regenerate/:messageId/stream` - Regenerate response
 
 ### Conversations
-- `GET /api/conversations` - List conversations
-- `POST /api/conversations` - Create conversation
+- `GET /api/conversations` - List conversations with pagination
+- `POST /api/conversations` - Create new conversation
+- `GET /api/conversations/:id/messages` - Get conversation history
 - `DELETE /api/conversations/:id` - Delete conversation
+- `GET /api/conversations/:id/export` - Export conversation (JSON/CSV)
+
+### User & Settings
+- `GET /api/users/profile` - Get user profile
+- `PUT /api/users/profile` - Update user profile
+- `GET /api/settings` - Get user settings
+- `PUT /api/settings` - Update user settings
+
+### Analytics
+- `GET /api/analytics/usage` - Get usage analytics
 
 ## 🚀 Deployment
 
 ### Docker Deployment
 
-1. **Build and run with Docker Compose**:
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+# Build and run with Docker Compose
+docker-compose up -d
 
-2. **For production**, update the environment variables and use:
-   ```bash
-   docker-compose -f docker-compose.prod.yml up -d
-   ```
+# For production
+docker-compose -f docker-compose.prod.yml up -d
+```
 
 ### Manual Production Deployment
 
-1. **Build the applications**:
-   ```bash
-   npm run build
-   ```
+```bash
+# Build the applications
+npm run build
 
-2. **Set up production database**:
-   ```bash
-   npm run prisma:migrate
-   ```
+# Set up production database
+npm run prisma:migrate
 
-3. **Start the API server**:
-   ```bash
-   npm --workspace apps/api run start
-   ```
+# Start the API server
+npm --workspace apps/api run start
 
-4. **Serve the web app**:
-   ```bash
-   npm --workspace apps/web run preview
-   ```
+# Serve the web app
+npm --workspace apps/web run preview
+```
+
+## 🔒 Security
+
+AI ChatBot follows security best practices:
+
+- **JWT Authentication** - Secure token-based auth with refresh tokens
+- **API Key Encryption** - OpenAI API keys stored encrypted in database
+- **Rate Limiting** - Configurable rate limits to prevent abuse
+- **Input Validation** - Zod schema validation for all API inputs
+- **CORS Protection** - Configured CORS for cross-origin requests
+- **Helmet Security** - Security headers and CSP policies
+- **SQL Injection Prevention** - Prisma ORM with parameterized queries
+- **File Upload Security** - Base64 encoding with MIME type validation
+
+## ⌨️ Development Scripts
+
+```bash
+# Development
+npm run dev              # Start both API and web servers
+npm run dev:api          # Start API server only
+npm run dev:web          # Start web server only
+
+# Building
+npm run build            # Build both applications
+npm run build:api        # Build API only
+npm run build:web        # Build web only
+
+# Database
+npm run prisma:generate  # Generate Prisma client
+npm run prisma:push      # Push schema to database
+npm run prisma:migrate   # Run database migrations
+npm run prisma:studio    # Open Prisma Studio
+
+# Production
+npm run start            # Start production API server
+```
 
 ## 🤝 Contributing
 
@@ -236,12 +309,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- OpenAI for the powerful AI models
-- The React and TypeScript communities
+- OpenAI for the powerful AI models and vision capabilities
+- The React, TypeScript, and Node.js communities
+- Prisma team for the excellent ORM
 - Everyone who contributes to open source
 
 ---
 
 <p align="center">
-  Made with ❤️ by the AI ChatBot team
+  Built with ❤️ by the AI ChatBot team
 </p>
