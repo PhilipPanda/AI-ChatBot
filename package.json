@@ -1,0 +1,24 @@
+{
+  "name": "ai-chatbot-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:api dev:web",
+    "dev:api": "npm --workspace apps/api run dev",
+    "dev:web": "npm --workspace apps/web run dev",
+    "build": "npm-run-all build:api build:web",
+    "build:api": "npm --workspace apps/api run build",
+    "build:web": "npm --workspace apps/web run build",
+    "start": "npm --workspace apps/api run start",
+    "prisma:generate": "npm --workspace apps/api run prisma:generate",
+    "prisma:migrate": "npm --workspace apps/api run prisma:migrate",
+    "prisma:push": "npm --workspace apps/api run prisma:push"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
