@@ -16,7 +16,7 @@
 
 1. **Clone** the repository and navigate to the project:
    ```bash
-   git clone https://github.com/yourusername/ai-chatbot.git
+   git clone https://github.com/PhilipPanda/AI-ChatBot.git
    cd ai-chatbot
    ```
 
