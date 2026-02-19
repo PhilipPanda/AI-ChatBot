@@ -12,7 +12,7 @@
 
 1. **Clone and navigate to the project**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/PhilipPanda/AI-ChatBot.git
    cd ai-chatbot
    ```
 
